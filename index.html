@@ -152,16 +152,7 @@
                 return;
             }
 
-            // Send an AJAX request to log the RSVP response
-            const xhr = new XMLHttpRequest();
-            xhr.open('POST', '/log_rsvp', true);
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    displayConfirmationPopup(`Hvala, ${name}, za potrditev udeležbe! Veselim se praznovanja s tabo!`);
-                }
-            };
-            xhr.send(`name=${encodeURIComponent(name)}&response=Potrdi`);
+            displayConfirmationPopup(`Hvala, ${name}, za potrditev udeležbe! Veselim se praznovanja s tabo!`);
         }
 
         // Function for declining RSVP
@@ -172,16 +163,7 @@
                 return;
             }
 
-            // Send an AJAX request to log the RSVP response
-            const xhr = new XMLHttpRequest();
-            xhr.open('POST', '/log_rsvp', true);
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    displayConfirmationPopup(`Hvala, ${name}, za odgovor.`);
-                }
-            };
-            xhr.send(`name=${encodeURIComponent(name)}&response=Odpovej`);
+            displayConfirmationPopup(`Hvala, ${name}, za odgovor.`);
         }
 
         // Function for displaying confirmation popup
